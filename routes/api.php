@@ -5,6 +5,8 @@ use App\Http\Controllers\CardController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\Api\CardFilterController;
+
 
 
 // Bejelentkezett felhasználó adatai
@@ -17,6 +19,7 @@ Route::post('/register', [RegisteredUserController::class, 'store']);
 // Kártyák lekérése – mindenki számára elérhető
 Route::get('/cards', [CardController::class, 'index']);
 Route::get('/cards/{card_id}', [CardController::class, 'show']);
+Route::post('/cards/filter', CardFilterController::class);
 
 // Kártyák módosítása – csak bejelentkezett felhasználónak
 Route::middleware('auth:sanctum')->group(function () {
