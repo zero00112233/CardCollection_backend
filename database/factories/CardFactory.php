@@ -64,7 +64,7 @@ class CardFactory extends Factory
                 'Limited edition',
             ]),
 
-            'cover_image' => null,
+            'cover_image' => 'img/kartya.jpg',
         ];
     }
 }
